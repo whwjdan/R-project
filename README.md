@@ -8,8 +8,8 @@ s3Title<-read.csv("C:/Users/BUK/PycharmProjects/untitled/review_wallat_title.csv
 s3Comment<-read.csv("C:/Users/BUK/PycharmProjects/untitled/review_wallat_comment.csv", head=F, na.strings=c(""))
 ## 1. csv import
 library(aws.s3)
-Sys.setenv("AWS_ACCESS_KEY_ID" = "AKIAID5LFKMQXMG3SU7Q",
-           "AWS_SECRET_ACCESS_KEY" = "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")
+Sys.setenv("AWS_ACCESS_KEY_ID" = "",
+           "AWS_SECRET_ACCESS_KEY" = "")
 
 ## 아마존 S3 저장하기
 s3save(s3Title, bucket = "whwjdans3/product", object = "review_wallat_title.Rdata")
@@ -66,7 +66,7 @@ bb <- findComment(wallet_T$title,wallet_C,"질스튜")
 #데이터 호출 섹션
 install.packages('aws.s3')
 library(aws.s3)
-Sys.setenv("AWS_ACCESS_KEY_ID" = "AKIAID5LFKMQXMG3SU7Q", "AWS_SECRET_ACCESS_KEY" = "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")
+Sys.setenv("AWS_ACCESS_KEY_ID" = "", "AWS_SECRET_ACCESS_KEY" = "")
 
 e <- new.env()
 s3load(object = "zill_C.Rdata", bucket = "whwjdans3/brand", envir = e)
